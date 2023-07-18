@@ -1,0 +1,31 @@
+void setup()
+{
+  pinMode(2, INPUT_PULLUP); 
+  // statement configures pin 2 as an input with a pull-up resistor. 
+  //This means that when the button connected to pin 2 is not pressed, the input will be pulled up to a high voltage level.
+
+  pinMode(4, OUTPUT);
+  //statement configures pin 4 as an output. This pin will be used to control an external device.
+
+}
+
+void loop() 
+  //The loop() function repeats continuously, constantly reading the button state and controlling the output on pin 4 based on the button's status.
+  //This allows for real-time interaction with the button and the connected device.
+{
+int button=digitalRead(2);
+	// reads the current state of pin 2 and stores it in the button variable.
+ 	//It checks whether the button is pressed or not.
+
+  if (button == HIGH ) {
+    digitalWrite(4, LOW);
+  } else {
+    digitalWrite(4, HIGH);
+  }
+//The if statement checks if the button variable is equal to HIGH, indicating that the button is pressed.
+//If the button is pressed, the digitalWrite(4, LOW) statement sets pin 4 to a low voltage level. This could be used to control an LED or any other connected device.
+//If the button is not pressed (i.e., the else condition), the digitalWrite(4, HIGH) statement sets pin 4 to a high voltage level, turning off the connected device.
+
+}
+
+
